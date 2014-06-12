@@ -15,7 +15,7 @@ Standards-Version: 3.9.4
 Package: anon-shared-build-inst-tb
 Architecture: all
 Depends: sudo, tb-updater, ${misc:Depends}
-Description: Installs Tor Browser in Anonymity Linux Distributions during build using tb-updater
+Description: Installs Tor Browser in Anonymity Distributions during build using tb-updater
  Providing a chroot-post.d script to install Tor Browser during the build
  process of anonymity linux distributions.
  .
