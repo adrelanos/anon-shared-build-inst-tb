@@ -1,4 +1,4 @@
-# Installs Tor Browser in Anonymity Linux Distributions during build using tb-updater #
+# Installs Tor Browser in Anonymity Distributions during build using tb-updater #
 
 Providing a chroot-post.d script to install Tor Browser during the build
 process of anonymity linux distributions.
