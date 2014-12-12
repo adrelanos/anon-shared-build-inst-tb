@@ -39,10 +39,25 @@ for skip_script in $SKIP_SCRIPTS; do
 done
 unset skip_script
 
-## Building in the clear and behind a transparent Tor proxy is supported.
-## In case we are not behind a Gateway with dedicated ports for
-## Tor Browser download, use TransPort or clear download instead of SocksPort.
-sudo -u user /usr/bin/update-torbrowser --devbuildpassthrough ## Depends on working internet connection.
+if [ "$anon_shared_inst_tb" = "none" ]; then
+   true "INFO: Skipping installation of Tor Browser as requested."
+elif [ "$anon_shared_inst_tb" = "closed" ]; then
+   true "INFO: Trying to install Tor Browser..."
+   ## Building in the clear and behind a transparent Tor proxy is supported.
+   ## In case we are not behind a Gateway with dedicated ports for
+   ## Tor Browser download, use TransPort or clear download instead of SocksPort.
+   ## Depends on working internet connection.
+   sudo -u user /usr/bin/update-torbrowser --devbuildpassthrough
+   true "INFO: Installation of Tor Browser succeeded."
+elif [ "$anon_shared_inst_tb" = "open" ]; then
+   true "INFO: Trying to install Tor Browser..."
+   sudo -u user /usr/bin/update-torbrowser --devbuildpassthrough \
+      || true "${bold}${red}ERROR: update-torbrowser exited $?, failed! Requested to fail open. Continuing...${reset}"
+   true "INFO: Installation of Tor Browser succeeded."
+else
+   true "INFO: Skipping installation of Tor Browser, because variable \
+anon_shared_inst_tb is neither set to none, closed or open (see --tb)."
+fi
 
 ## Explicitly "exit 0", so eventually trapped errors can be ignored.
 exit 0
