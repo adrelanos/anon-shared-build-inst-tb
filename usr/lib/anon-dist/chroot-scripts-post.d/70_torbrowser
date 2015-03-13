@@ -39,6 +39,11 @@ for skip_script in $SKIP_SCRIPTS; do
 done
 unset skip_script
 
+## Setting environment variable ARCH to $BUILD_TARGET_ARCH, so tb-updater
+## will not download an auto detected ARCH using `uname --machine` (which could
+## for example be amd64), but $BUILD_TARGET_ARCH (which could be set to i386).
+export ARCH="$BUILD_TARGET_ARCH"
+
 if [ "$anon_shared_inst_tb" = "none" ]; then
    true "INFO: Skipping installation of Tor Browser as requested."
 elif [ "$anon_shared_inst_tb" = "closed" ]; then
