@@ -52,11 +52,11 @@ elif [ "$anon_shared_inst_tb" = "closed" ]; then
    ## In case we are not behind a Gateway with dedicated ports for
    ## Tor Browser download, use TransPort or clear download instead of SocksPort.
    ## Depends on working internet connection.
-   sudo -u user /usr/bin/update-torbrowser --devbuildpassthrough
+   sudo -E -u user /usr/bin/update-torbrowser --devbuildpassthrough
    true "INFO: Installation of Tor Browser succeeded."
 elif [ "$anon_shared_inst_tb" = "open" ]; then
    true "INFO: Trying to install Tor Browser..."
-   sudo -u user /usr/bin/update-torbrowser --devbuildpassthrough \
+   sudo -E -u user /usr/bin/update-torbrowser --devbuildpassthrough \
       || true "${bold}${red}ERROR: update-torbrowser exited $?, failed! Requested to fail open. Continuing...${reset}"
    true "INFO: Installation of Tor Browser succeeded."
 else
