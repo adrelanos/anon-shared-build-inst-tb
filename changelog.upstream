@@ -1,3 +1,27 @@
+commit f1bf7621a729e7d60d87005a82ae61ad07a413a9
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Tue Mar 24 17:26:19 2015 +0000
+
+    updated makefile generic to version 1.4
+
+commit 0b5b6e15c9fcada3a6eb2a83dc9f9c7e74ddb506
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Sat Mar 14 05:18:55 2015 +0000
+
+    fix, added -E to sudo to preserve environment, so ARCH will be readable by update-torbrowser
+
+commit ee09b9e2baf72b919d63ee8a55df82dc5ebf3b87
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Fri Mar 13 18:05:24 2015 +0000
+
+    fix
+
+commit b25f612512cef4732feed165a71452a93c60d5b5
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Wed Feb 4 00:56:01 2015 +0000
+
+    bumped changelog version
+
 commit 1db31b456e1850cf46c342b721f37a022293148c
 Author: Patrick Schleizer <adrelanos@riseup.net>
 Date:   Wed Feb 4 00:44:39 2015 +0000
